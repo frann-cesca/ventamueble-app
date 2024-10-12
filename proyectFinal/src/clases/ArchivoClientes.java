@@ -7,6 +7,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import  java.util.ArrayList;
 
+/**
+ * Esta clase sirve para manejar el archivo .txt de los clientes.
+ */
 public class ArchivoClientes {
 	public static void grabarClientes(ArrayList<Cliente> clientes, String filename) {
 		try (/*para escribir en el archivo de manera eficiente.*/BufferedWriter writer = new BufferedWriter(new FileWriter(filename))){
