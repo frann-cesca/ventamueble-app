@@ -7,7 +7,7 @@ public class Cliente {
 	private int codigoCliente;
 	private String nombreCliente;
 	private String apellidoCliente;
-    private String direccionCliente;
+  private String direccionCliente;
 	private String telefonoCliente;
 	private String dniCliente;
 
@@ -68,4 +68,10 @@ public class Cliente {
 		this.dniCliente = dniCliente;
 	}
 
+	@Override public String toString() {
+		return "Cliente{" + "codigoCliente=" + codigoCliente + ", nombreCliente='" + nombreCliente
+			+ '\'' + ", apellidoCliente='" + apellidoCliente + '\'' + ", direccionCliente='"
+			+ direccionCliente + '\'' + ", telefonoCliente='" + telefonoCliente + '\'' + ", dniCliente='"
+			+ dniCliente + '\'' + '}';
+	}
 }

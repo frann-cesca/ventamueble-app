@@ -17,7 +17,7 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import javax.swing.JTable;// 
+import javax.swing.JTable;//
 
 public class guiMantClientes extends JFrame {
 
@@ -29,7 +29,7 @@ public class guiMantClientes extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5; 
-	private GestionClientes gestionClientes;//
+	private GestionClientes gestionClientes = new GestionClientes();
 	private JTable table;
 
 	/**
@@ -52,7 +52,6 @@ public class guiMantClientes extends JFrame {
 	 * Create the frame.
 	 */
 	public guiMantClientes() {
-		gestionClientes = new GestionClientes();//
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\franc\\Downloads\\sofa.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 666, 530);
@@ -164,5 +163,12 @@ public class guiMantClientes extends JFrame {
 		table = new JTable();
 		table.setBounds(21, 190, 607, 275);
 		contentPane.add(table);
+
+		ArrayList<Cliente> clientes = gestionClientes.getClientes();
+		System.out.println(clientes.get(0));
+		System.out.println(clientes.get(0).getCodigoCliente());
+		System.out.println(clientes.get(0).getApellidoCliente());
+		System.out.println(clientes.get(0).getNombreCliente());
+		System.out.println(clientes.get(0).getTelefonoCliente());
 	}
 }

@@ -14,9 +14,10 @@ public class ArchivoClientes {
 	public static void grabarClientes(ArrayList<Cliente> clientes, String filename) {
 		try (/*para escribir en el archivo de manera eficiente.*/BufferedWriter writer = new BufferedWriter(new FileWriter(filename))){
 			for (Cliente c : clientes) {
-				writer.write(c.getCodigoCliente() + " , " + c.getNombreCliente() + " , " +
-				c.getApellidoCliente()	 + " , " + c.getDireccionCliente()	+ " , " + 
-				c.getTelefonoCliente()	 + " , " + c.getDniCliente());
+				String lineaParaEscribir = c.getCodigoCliente() + " , " + c.getNombreCliente() + " , " +
+					c.getApellidoCliente()	 + " , " + c.getDireccionCliente()	+ " , " +
+					c.getTelefonoCliente()	 + " , " + c.getDniCliente();
+				writer.write(lineaParaEscribir);
 			writer.newLine();			
 			}
 			
@@ -24,14 +25,26 @@ public class ArchivoClientes {
 			e.printStackTrace();
 		}
 	}
-public static ArrayList<Cliente> cargarClientes(String filename){
+
+	public static void grabarCliente(Cliente cliente, String filename) {
+		//TODO: Evitar que se pierdan los registros previos del archivo de texto
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+			writer.newLine();
+			writer.write(cliente.getCodigoCliente() + " , " + cliente.getNombreCliente() + " , " +
+					cliente.getApellidoCliente()	 + " , " + cliente.getDireccionCliente()	+ " , " +
+					cliente.getTelefonoCliente()	 + " , " + cliente.getDniCliente());
+		} catch (IOException  e) {
+			e.printStackTrace();
+		}
+	}
+public static ArrayList<Cliente> cargarClientes(String filename) {
 	ArrayList<Cliente> clientes = new ArrayList<>();
 
 	try(BufferedReader reader = new BufferedReader(new FileReader(filename))){
 		String line;
-		while ((line = reader.readLine())!= null) {
+		while ((line = reader.readLine()) != null) {
 			String[] datos = line.split(" , ");
-			int codigoCliente = Integer.parseInt(datos [0]);
+			int codigoCliente = Integer.parseInt(datos[0]);
 			String nombreCliente = datos[1];
 			String apellidoCliente = datos[2]; 
 			String direccionCliente = datos[3];
@@ -50,7 +63,6 @@ public static ArrayList<Cliente> cargarClientes(String filename){
 	
 
 }
-	
 	
 	
 }//CIERRE TOTAL
