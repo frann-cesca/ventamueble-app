@@ -1,11 +1,25 @@
 package clases;
 
-public class Cliente {//VARIABLES
+/**
+ * Clase para definir el Cliente y sus atributos;
+ */
+public class Cliente {
 	private int codigoCliente;
-	private String nombreCliente, apellidoCliente, direccionCliente, telefonoCliente, dniCliente;
-	//FIN VARIABLES
-	
-	//CONSTRUCTOR
+	private String nombreCliente;
+	private String apellidoCliente
+  private String direccionCliente
+	private String telefonoCliente
+	private String dniCliente;
+
+	/**
+	 * Constructor de la clase Cliente.
+	 * @param codigoCliente
+	 * @param nombreCliente
+	 * @param apellidoCliente
+	 * @param direccionCliente
+	 * @param telefonoCliente
+	 * @param dniCliente
+	 */
 	public Cliente(int codigoCliente, String nombreCliente, String apellidoCliente, String direccionCliente,
 			String telefonoCliente, String dniCliente) {
 		super();
@@ -16,8 +30,7 @@ public class Cliente {//VARIABLES
 		this.telefonoCliente = telefonoCliente;
 		this.dniCliente = dniCliente;
 	}
-	
-	//GET AND SET
+
 	public int getCodigoCliente() {
 		return codigoCliente;
 	}
@@ -54,5 +67,5 @@ public class Cliente {//VARIABLES
 	public void setDniCliente(String dniCliente) {
 		this.dniCliente = dniCliente;
 	}
-	
+
 }
