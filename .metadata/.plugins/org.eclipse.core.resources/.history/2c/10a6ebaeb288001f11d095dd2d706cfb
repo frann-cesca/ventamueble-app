@@ -1,21 +1,15 @@
 package clases;
 
 import java.util.ArrayList;
-/*
- * declaracion de clase gestion clientes
- */
+
 public class GestionClientes {
 	private ArrayList<Cliente>  clientes;
 	
-	/*
-	 * constructor
-	 */
+	//CONSTRUCTOR
 	public GestionClientes() {
 		clientes = new ArrayList<>();
 		}
-	/*
-	 * metodo para agregar la información de cliente
-	 */
+	//METODO PARA AGREGAR Y SE AÑADE EL OBJETO A LA LISTA
 	public void agregarCliente(Cliente c) {
 		clientes.add(c);
 		}
@@ -23,10 +17,7 @@ public class GestionClientes {
 	public void eliminarCliente(int codigoCliente) {
 		clientes.removeIf(c -> c.getCodigoCliente() == codigoCliente);
 	}
-	
-	/*
-	 * devuelve la lista
-	 */
+	//DEVUELVE LA LISTA
 	public ArrayList<Cliente> getClientes(){
 		return clientes;
 	}

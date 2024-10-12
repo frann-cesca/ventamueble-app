@@ -1,19 +1,12 @@
 package clases;
 
 public class Producto {
-	/*
-	 * variables de la clase Producto
-	 */
-	private int codigoProducto;
-	private int stockActual;
-	 private int stockMinimo;
-	 private int stockMaximo;
+	//VARIABLES
+	private int codigoProducto, stockActual, stockMinimo, stockMaximo;
 	private String nombreProducto;
 	private double precioProducto;
 	
-	/*
-	 * Constructor 
-	 */
+	//CONSTRUCTOR
 	public Producto(int codigoProducto, int stockActual, int stockMinimo, int stockMaximo, String nombreProducto,
 			double precioProducto) {
 		super();
