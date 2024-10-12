@@ -16,8 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import javax.swing.JTable;// 
+import java.util.ArrayList;// 
 
 public class guiMantClientes extends JFrame {
 
@@ -28,9 +27,9 @@ public class guiMantClientes extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-	private JTextField textField_5; 
+	private JTextField textField_5;
+	private JTextArea textArea;//
 	private GestionClientes gestionClientes;//
-	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -161,8 +160,8 @@ public class guiMantClientes extends JFrame {
 		btnNewButton_4.setBounds(496, 138, 85, 21);
 		contentPane.add(btnNewButton_4);
 		
-		table = new JTable();
-		table.setBounds(21, 190, 607, 275);
-		contentPane.add(table);
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(64, 194, 525, 260);
+		contentPane.add(textArea);
 	}
 }
